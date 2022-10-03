@@ -1,4 +1,5 @@
 ﻿using GroceryStoreApplication.Models;
+using GroceryStoreApplication.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,6 +110,7 @@ namespace GroceryStoreApplication
             {
                 MessageBox.Show("Welcome " + textBox4.Text + " !!!");
                 ClearTextBoxes();
+                Utility.User = users.Find(x => x.Username == textBox4.Text && x.Password == textBox5.Text);
                 Products products = new Products();
                 products.Show();
             }

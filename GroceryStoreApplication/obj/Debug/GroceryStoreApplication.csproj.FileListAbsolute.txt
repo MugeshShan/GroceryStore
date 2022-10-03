@@ -12,3 +12,5 @@ C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplicati
 C:\Projects\GroceryStore\GroceryStoreApplication\bin\Debug\Database1.accdb
 C:\Projects\GroceryStore\GroceryStoreApplication\bin\Debug\GroceryStoreDB.accdb
 C:\Projects\GroceryStore\GroceryStoreApplication\bin\Debug\db2.accdb
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.Products.resources
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.Cart.resources
