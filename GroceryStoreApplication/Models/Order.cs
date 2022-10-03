@@ -10,10 +10,16 @@ namespace GroceryStoreApplication.Models
     {
         public Guid Id { get; set; }
 
-        public string ProductName { get; set; }
+        public List<OrderedProducts> OrderedProducts { get; set; }
 
-        public double Price { get; set; }
+        public bool IsInstaBuy { get; set; }
 
-        public double Quantity { get; set; }
+        public double BillAmount { get; set; }
+
+        public Order()
+        {
+            Id = new Guid();
+            OrderedProducts = new List<OrderedProducts>();
+        }
     }
 }

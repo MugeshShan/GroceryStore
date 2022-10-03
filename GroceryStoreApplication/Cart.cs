@@ -1,8 +1,12 @@
-﻿using GroceryStoreApplication.Utils;
+﻿using GroceryStoreApplication.Models;
+using GroceryStoreApplication.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,6 +55,7 @@ namespace GroceryStoreApplication
             label3.Text = (Total + 200).ToString();
         }
 
+        [Obsolete]
         private void button1_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
@@ -62,6 +67,24 @@ namespace GroceryStoreApplication
                 Total += 200;
             }
             label3.Text = Total.ToString();
+
+            var order = new Order();
+            order.Id = Guid.NewGuid();
+            order.OrderedProducts.AddRange(Utility.StaticOrderedProducts);
+            order.IsInstaBuy = radioButton2.Checked;
+            order.BillAmount = Total;
+
+            var json = JsonConvert.SerializeObject(order.OrderedProducts);
+
+            var section = ConfigurationSettings.GetConfig("connectionStrings");
+            OleDbConnection connection = new OleDbConnection();
+            var str = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
+            connection.ConnectionString = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
+            connection.Open();
+            var command = String.Format("Insert INTO [Order] (OrderId, [OrderedProducts], IsInstaBuy, [BillAmount] ) VALUES ('{0}', '{1}', {2}, {3})", order.Id, json, order.IsInstaBuy, order.BillAmount);
+            OleDbCommand command2 = new OleDbCommand(command, connection);
+            command2.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }

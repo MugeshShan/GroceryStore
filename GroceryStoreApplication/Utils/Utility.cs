@@ -12,5 +12,6 @@ namespace GroceryStoreApplication.Utils
 
         public static List<OrderedProducts> StaticOrderedProducts = new List<OrderedProducts>();
         public static User User = new User();
+        public static Order Order = new Order();
     }
 }
