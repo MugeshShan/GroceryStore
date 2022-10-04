@@ -85,6 +85,10 @@ namespace GroceryStoreApplication
             OleDbCommand command2 = new OleDbCommand(command, connection);
             command2.ExecuteNonQuery();
             connection.Close();
+
+            Payment payment = new Payment();
+            Utility.Order = order;
+            payment.Show();
         }
     }
 }

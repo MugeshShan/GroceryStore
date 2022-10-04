@@ -54,6 +54,10 @@ namespace GroceryStoreApplication
                 connection.Open();
                 var command = String.Format("Insert INTO [User] (Username, [Password], RoleId) VALUES ('{0}', '{1}', {2})", textBox1.Text, textBox3.Text, 2);
                 OleDbCommand command2 = new OleDbCommand(command, connection);
+                if(textBox3.Text == "admin" && textBox2.Text == "admin@123")
+                {
+                    MessageBox.Show("Welcome admin !!!");
+                }
                 if (textBox3.Text != textBox2.Text)
                 {
                     MessageBox.Show("Passwords are not same");
@@ -106,11 +110,12 @@ namespace GroceryStoreApplication
                     users.Add(tempUser);
                 }
             }
-            if(users.Find(x=>x.Username == textBox4.Text && x.Password == textBox5.Text) != null)
+            var user = users.Find(x => x.Username == textBox4.Text && x.Password == textBox5.Text);
+            if (user != null)
             {
                 MessageBox.Show("Welcome " + textBox4.Text + " !!!");
                 ClearTextBoxes();
-                Utility.User = users.Find(x => x.Username == textBox4.Text && x.Password == textBox5.Text);
+                Utility.User = user;
                 Products products = new Products();
                 products.Show();
             }
