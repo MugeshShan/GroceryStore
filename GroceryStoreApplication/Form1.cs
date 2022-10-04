@@ -110,19 +110,28 @@ namespace GroceryStoreApplication
                     users.Add(tempUser);
                 }
             }
-            var user = users.Find(x => x.Username == textBox4.Text && x.Password == textBox5.Text);
-            if (user != null)
+            if (textBox4.Text == "admin" && textBox5.Text == "admin@123")
             {
-                MessageBox.Show("Welcome " + textBox4.Text + " !!!");
-                ClearTextBoxes();
-                Utility.User = user;
-                Products products = new Products();
-                products.Show();
+                MessageBox.Show("Welcome admin !!!");
+                AdminPage admin = new AdminPage();
+                admin.Show();
             }
             else
             {
-                MessageBox.Show("Username or Password is incorrect!!!");
-                ClearTextBoxes();
+                var user = users.Find(x => x.Username == textBox4.Text && x.Password == textBox5.Text);
+                if (user != null)
+                {
+                    MessageBox.Show("Welcome " + textBox4.Text + " !!!");
+                    ClearTextBoxes();
+                    Utility.User = user;
+                    Products products = new Products();
+                    products.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username or Password is incorrect!!!");
+                    ClearTextBoxes();
+                }
             }
             connection.Close();
             

@@ -52,11 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cart.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryAdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryAdminPage.Designer.cs">
+      <DependentUpon>CategoryAdminPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -96,8 +108,14 @@
       <DependentUpon>ThankYou.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Utility.cs" />
+    <EmbeddedResource Include="AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryAdminPage.resx">
+      <DependentUpon>CategoryAdminPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

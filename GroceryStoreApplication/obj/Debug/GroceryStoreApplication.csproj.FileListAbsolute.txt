@@ -18,3 +18,5 @@ C:\Projects\GroceryStore\GroceryStoreApplication\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\GroceryStore\GroceryStoreApplication\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.csproj.CopyComplete
 C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.ThankYou.resources
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.AdminPage.resources
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.CategoryAdminPage.resources
