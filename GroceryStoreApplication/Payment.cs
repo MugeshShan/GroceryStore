@@ -33,13 +33,15 @@ namespace GroceryStoreApplication
             var str = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
             connection.ConnectionString = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
             connection.Open();
-            var command = String.Format("Insert INTO [UserDetails] (ID, [Username], Address, [City], State, [Pincode], Phone ) VALUES ('{0}', '{1}', {2}, {3},  {4}, {5}, {6})", user.Id, user.Username, user.Address, user.City, user.State, user.Pincode, user.Phone);
-            OleDbCommand command2 = new OleDbCommand(command, connection);
-            command2.ExecuteNonQuery();
-            var paymentCommand = String.Format("INSERT INTO [Payment] (OrderId, [IsConfirmed], BillAmount, [UserId])  VALUES ('{0}', '{1}', {2}, {3})", Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id);
+            //var command = String.Format("Insert INTO [UserDetails] (ID, [Username], Address, [City], State, [Pincode], Phone ) VALUES ('{0}', '{1}', {2}, {3},  {4}, {5}, {6})", user.Id, user.Username, user.Address, user.City, user.State, user.Pincode, user.Phone);
+            //OleDbCommand command2 = new OleDbCommand(command, connection);
+            //command2.ExecuteNonQuery();
+            var paymentCommand = String.Format("INSERT INTO [Payment] (OrderId, [BillAmount], IsConfirmed , [UserId])  VALUES ('{0}', '{1}', {2}, {3})", Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id);
             OleDbCommand paymentCommand2 = new OleDbCommand(paymentCommand, connection);
             paymentCommand2.ExecuteNonQuery();
             connection.Close();
+            ThankYou thankYou = new ThankYou();
+            thankYou.Show();
         }
 
         private void Payment_Load(object sender, EventArgs e)
