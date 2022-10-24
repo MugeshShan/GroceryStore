@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace GroceryStoreApplication.Models
 {
-    public class Payment
+    public class Payments
     {
         public Guid Id { get; set; }
 
+        public Guid OrderId { get; set; }
+
+        public double BillAmount { get; set; }
+
         public bool IsConfirmed { get; set; }
 
-        public User User { get; set; }
+        public int UserId { get; set; }
     }
 }

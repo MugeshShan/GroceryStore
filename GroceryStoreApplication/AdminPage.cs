@@ -22,5 +22,10 @@ namespace GroceryStoreApplication
             CategoryAdminPage categoryAdminPage = new CategoryAdminPage();  
             categoryAdminPage.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //ProductAdminPage
+        }
     }
 }

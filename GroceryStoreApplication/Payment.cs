@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GroceryStoreApplication.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -22,11 +24,13 @@ namespace GroceryStoreApplication
         [Obsolete]
         private void button1_Click(object sender, EventArgs e)
         {
-            Utils.Utility.User.Address = richTextBox1.Text;
-            Utils.Utility.User.City = textBox2.Text;
-            Utils.Utility.User.State = textBox3.Text;
-            Utils.Utility.User.Pincode = textBox4.Text;
-            Utils.Utility.User.Phone = textBox5.Text;
+            var userDetails = new UserDetails();
+            userDetails.Address = richTextBox1.Text;
+            userDetails.City = textBox2.Text;
+            userDetails.State = textBox3.Text;
+            userDetails.Pincode = textBox4.Text;
+            userDetails.Phone = textBox5.Text;
+            var addressJson = JsonConvert.SerializeObject(userDetails);
             var user = Utils.Utility.User;
             var section = ConfigurationSettings.GetConfig("connectionStrings");
             OleDbConnection connection = new OleDbConnection();
@@ -36,9 +40,28 @@ namespace GroceryStoreApplication
             //var command = String.Format("Insert INTO [UserDetails] (ID, [Username], Address, [City], State, [Pincode], Phone ) VALUES ('{0}', '{1}', {2}, {3},  {4}, {5}, {6})", user.Id, user.Username, user.Address, user.City, user.State, user.Pincode, user.Phone);
             //OleDbCommand command2 = new OleDbCommand(command, connection);
             //command2.ExecuteNonQuery();
-            var paymentCommand = String.Format("INSERT INTO [Payment] (OrderId, [BillAmount], IsConfirmed , [UserId])  VALUES ('{0}', '{1}', {2}, {3})", Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id);
+            var payment = new Payments();
+            payment.Id = Guid.NewGuid();
+            payment.OrderId = Utils.Utility.Order.Id;
+            payment.BillAmount = Utils.Utility.Order.BillAmount;
+            payment.IsConfirmed = true;
+            payment.UserId = Utils.Utility.User.Id;
+            var date = DateTime.Now.Date.ToString("MM/dd/yyyy");
+            var paymentCommand = String.Format("INSERT INTO [Payment] (Id, [OrderId], BillAmount, [IsConfirmed] , UserId, [PaymentDate])  " +
+                "VALUES ('{0}', '{1}', {2}, {3}, {4},  {5})", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date);
             OleDbCommand paymentCommand2 = new OleDbCommand(paymentCommand, connection);
             paymentCommand2.ExecuteNonQuery();
+            var json = JsonConvert.SerializeObject(Utils.Utility.StaticOrderedProducts).ToString();
+            var sales = new Sales();
+            sales.Price = payment.BillAmount;
+            sales.Products = json;
+            sales.Quantity = Utils.Utility.StaticOrderedProducts.Count();
+            sales.UserId = payment.UserId;
+            sales.PaymentId = payment.Id;
+            var command = String.Format("Insert INTO [Sales] (Products, [Price], Quantity, [UserId], PaymentId, SalesDate) " +
+                "VALUES ({0}, {1}, {2}, {3}, '{4}', {5})", sales.Products, sales.Price, sales.Quantity, sales.UserId, sales.PaymentId, date);
+            OleDbCommand command2 = new OleDbCommand(command, connection);
+            command2.ExecuteNonQuery();
             connection.Close();
             ThankYou thankYou = new ThankYou();
             thankYou.Show();

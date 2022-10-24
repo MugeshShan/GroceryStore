@@ -15,14 +15,6 @@ namespace GroceryStoreApplication.Models
         public int RoleId { get; set; }
         public bool IsAdmin { get; set; }
 
-        public string Address { get; set; }
-
-        public string City { get; set; }
-
-        public string State { get; set; }
-
-        public string Pincode { get; set; }
-
-        public string Phone { get; set; }
+      
     }
 }
