@@ -46,20 +46,19 @@ namespace GroceryStoreApplication
             payment.BillAmount = Utils.Utility.Order.BillAmount;
             payment.IsConfirmed = true;
             payment.UserId = Utils.Utility.User.Id;
-            var date = DateTime.Now.Date.ToString("MM/dd/yyyy");
+            var date = DateTime.Now.ToString("MM/dd/yyyy");
             var paymentCommand = String.Format("INSERT INTO [Payment] (Id, [OrderId], BillAmount, [IsConfirmed] , UserId, [PaymentDate])  " +
-                "VALUES ('{0}', '{1}', {2}, {3}, {4},  {5})", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date);
+                "VALUES ('{0}', '{1}', {2}, {3}, {4},  '{5}')", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date);
             OleDbCommand paymentCommand2 = new OleDbCommand(paymentCommand, connection);
             paymentCommand2.ExecuteNonQuery();
-            var json = JsonConvert.SerializeObject(Utils.Utility.StaticOrderedProducts).ToString();
+            var json = JsonConvert.SerializeObject(Utils.Utility.Order.OrderedProducts);
             var sales = new Sales();
             sales.Price = payment.BillAmount;
             sales.Products = json;
             sales.Quantity = Utils.Utility.StaticOrderedProducts.Count();
             sales.UserId = payment.UserId;
             sales.PaymentId = payment.Id;
-            var command = String.Format("Insert INTO [Sales] (Products, [Price], Quantity, [UserId], PaymentId, SalesDate) " +
-                "VALUES ({0}, {1}, {2}, {3}, '{4}', {5})", sales.Products, sales.Price, sales.Quantity, sales.UserId, sales.PaymentId, date);
+            var command = String.Format("Insert INTO [Sales] ([Products], [Price], [Quantity], [UserId], [PaymentId], [SalesDate]) VALUES ('{0}', {1}, {2}, {3}, '{4}', {5})", JsonConvert.SerializeObject(Utils.Utility.Order.OrderedProducts), sales.Price, sales.Quantity, sales.UserId, sales.PaymentId, date);
             OleDbCommand command2 = new OleDbCommand(command, connection);
             command2.ExecuteNonQuery();
             connection.Close();
