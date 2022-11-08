@@ -65,16 +65,16 @@ namespace GroceryStoreApplication
                 var str = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
                 connection.ConnectionString = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
                 connection.Open();
-                var command = String.Format("Insert INTO [Product] (ProductName, [CategoryId], Price) VALUES ('{0}, {1}, {2}')", textBox1.Text, id, textBox2.Text);
+                var command = String.Format("Insert INTO [Product] (ProductName, [CategoryId], Price) VALUES ('{0}', {1}, {2})", textBox1.Text, id, textBox2.Text);
                 OleDbCommand command2 = new OleDbCommand(command, connection);
                 if (textBox1.Text != "")
                 {
                     command2.ExecuteNonQuery();
-                    MessageBox.Show("Category " + textBox1.Text + "is added !!");
+                    MessageBox.Show("Product " + textBox1.Text + " is added !!");
                 }
                 else
                 {
-                    MessageBox.Show("Please enter catgory name");
+                    MessageBox.Show("Please enter product name");
                 }
                 connection.Close();
             }

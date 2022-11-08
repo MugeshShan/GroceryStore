@@ -20,3 +20,6 @@ C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplicati
 C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.csproj.CopyComplete
 C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.exe
 C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.pdb
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.ProductAdminPage.resources
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.OrderAdminPage.resources
+C:\Projects\GroceryStore\GroceryStoreApplication\obj\Debug\GroceryStoreApplication.PaymentAdminPage.resources
