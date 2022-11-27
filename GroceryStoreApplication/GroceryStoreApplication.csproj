@@ -143,6 +143,9 @@
     <EmbeddedResource Include="OrderAdminPage.resx">
       <DependentUpon>OrderAdminPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentAdminPage.resx">
       <DependentUpon>PaymentAdminPage.cs</DependentUpon>
     </EmbeddedResource>

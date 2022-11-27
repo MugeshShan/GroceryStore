@@ -37,33 +37,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.label1.Location = new System.Drawing.Point(112, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 20);
+            this.label1.Size = new System.Drawing.Size(135, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Category";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(261, 56);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 28);
+            this.comboBox1.Size = new System.Drawing.Size(165, 30);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(420, 49);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.button1.Location = new System.Drawing.Point(482, 56);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 35);
+            this.button1.Size = new System.Drawing.Size(132, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Get";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // flowLayoutPanel1
             // 

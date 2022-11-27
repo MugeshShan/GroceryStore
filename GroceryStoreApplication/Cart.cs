@@ -81,7 +81,8 @@ namespace GroceryStoreApplication
             var str = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
             connection.ConnectionString = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
             connection.Open();
-            var command = String.Format("Insert INTO [Order] (OrderId, [OrderedProducts], IsInstaBuy, [BillAmount], [OrderDate] ) VALUES ('{0}', '{1}', {2}, {3}, {4})", order.Id, json, order.IsInstaBuy, order.BillAmount, DateTime.Now.ToString("MM/dd/yyyy"));
+            var dateTime = DateTime.Now.ToString("MM/dd/yyyy");
+            var command = String.Format("Insert INTO [Order] (OrderId, [OrderedProducts], IsInstaBuy, [BillAmount], [OrderDate] ) VALUES ('{0}', '{1}', '{2}', {3}, '{4}')", order.Id, json, order.IsInstaBuy, order.BillAmount, dateTime);
             OleDbCommand command2 = new OleDbCommand(command, connection);
             command2.ExecuteNonQuery();
             connection.Close();
@@ -89,6 +90,7 @@ namespace GroceryStoreApplication
             Payment payment = new Payment();
             Utility.Order = order;
             payment.Show();
+            this.Close();
         }
     }
 }

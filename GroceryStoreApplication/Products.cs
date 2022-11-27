@@ -87,12 +87,15 @@ namespace GroceryStoreApplication
 
             Label NameTxt = new Label();
             NameTxt.Text = "Product Name";
+            NameTxt.Font = new Font("Times New Roman", 10F);
 
             Label PriceTxt = new Label();
             PriceTxt.Text = "Product Price";
+            PriceTxt.Font = new Font("Times New Roman", 10F);
 
             Label QtyTxt = new Label();
             QtyTxt.Text = "Quantity (in Kg)";
+            QtyTxt.Font = new Font("Times New Roman", 10F);
 
 
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
@@ -129,11 +132,13 @@ namespace GroceryStoreApplication
             addCartButton.Text = "Add";
             this.flowLayoutPanel1.Controls.Add(addCartButton);
             addCartButton.Click += new System.EventHandler(this.AddToCart);
+            addCartButton.Font = new Font("Times New Roman", 10F);
 
             Button goToCart = new Button();
             goToCart.Text = "Go To Cart";
             this.flowLayoutPanel1.Controls.Add(goToCart);
             goToCart.Click += new System.EventHandler(this.GoToCart);
+            goToCart.Font = new Font("Times New Roman", 10F);
 
             if (dt.Rows.Count > 0)
             { 
@@ -149,6 +154,7 @@ namespace GroceryStoreApplication
             Utility.StaticOrderedProducts.AddRange(OrderedProducts);
             Cart cart = new Cart();
             cart.Show();
+            this.Close();
         }
 
         private void AddToCart(object sender, EventArgs e)

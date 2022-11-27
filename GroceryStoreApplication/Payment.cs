@@ -44,26 +44,31 @@ namespace GroceryStoreApplication
             payment.Id = Guid.NewGuid();
             payment.OrderId = Utils.Utility.Order.Id;
             payment.BillAmount = Utils.Utility.Order.BillAmount;
-            payment.IsConfirmed = true;
+            payment.IsConfirmed = "Yes";
             payment.UserId = Utils.Utility.User.Id;
             var date = DateTime.Now.ToString("MM/dd/yyyy");
             var paymentCommand = String.Format("INSERT INTO [Payment] (Id, [OrderId], BillAmount, [IsConfirmed] , UserId, [PaymentDate], [Address])  " +
-                "VALUES ('{0}', '{1}', {2}, {3}, {4},  '{5}')", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date);
+                "VALUES ('{0}', '{1}', {2}, '{3}', {4},  '{5}', '{6}')", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date, this.richTextBox1.Text);
             OleDbCommand paymentCommand2 = new OleDbCommand(paymentCommand, connection);
             paymentCommand2.ExecuteNonQuery();
             var json = JsonConvert.SerializeObject(Utils.Utility.Order.OrderedProducts);
             var sales = new Sales();
-            sales.Price = payment.BillAmount;
-            sales.Products = json;
-            sales.Quantity = Utils.Utility.StaticOrderedProducts.Count();
-            sales.UserId = payment.UserId;
-            sales.PaymentId = payment.Id;
-            var command = String.Format("Insert INTO [Sales] ([Products], [Price], [Quantity], [UserId], [PaymentId], [SalesDate]) VALUES ('{0}', {1}, {2}, {3}, '{4}', {5})", JsonConvert.SerializeObject(Utils.Utility.Order.OrderedProducts), sales.Price, sales.Quantity, sales.UserId, sales.PaymentId, date);
-            OleDbCommand command2 = new OleDbCommand(command, connection);
-            command2.ExecuteNonQuery();
+            var dateTime = DateTime.Now.ToString("MM/dd/yyyy");
+            foreach (var product in Utils.Utility.Order.OrderedProducts)
+            {
+                sales.Price = payment.BillAmount;
+                sales.Products = product.ProductName;
+                sales.Quantity = product.Quantity;
+                sales.UserId = payment.UserId;
+                sales.PaymentId = payment.Id;
+                var command = String.Format("Insert INTO [Sales] ([Products], [Price], [Quantity], [UserId], [PaymentId],[Address], [SalesDate]) VALUES ('{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}')", sales.Products, sales.Price, sales.Quantity, sales.UserId, sales.PaymentId, this.richTextBox1.Text, dateTime);
+                OleDbCommand command2 = new OleDbCommand(command, connection);
+                command2.ExecuteNonQuery();
+            }
             connection.Close();
             ThankYou thankYou = new ThankYou();
             thankYou.Show();
+            this.Close();
         }
 
         private void Payment_Load(object sender, EventArgs e)
@@ -73,6 +78,11 @@ namespace GroceryStoreApplication
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

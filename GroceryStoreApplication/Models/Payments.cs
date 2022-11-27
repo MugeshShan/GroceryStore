@@ -14,7 +14,7 @@ namespace GroceryStoreApplication.Models
 
         public double BillAmount { get; set; }
 
-        public bool IsConfirmed { get; set; }
+        public string IsConfirmed { get; set; }
 
         public int UserId { get; set; }
     }

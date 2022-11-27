@@ -46,9 +46,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.button1.Location = new System.Drawing.Point(199, 300);
+            this.button1.Location = new System.Drawing.Point(223, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 33);
+            this.button1.Size = new System.Drawing.Size(152, 51);
             this.button1.TabIndex = 0;
             this.button1.Text = "Signup";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.textBox1.Location = new System.Drawing.Point(199, 120);
+            this.textBox1.Location = new System.Drawing.Point(223, 120);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 30);
             this.textBox1.TabIndex = 1;
@@ -66,7 +66,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.textBox2.Location = new System.Drawing.Point(199, 174);
+            this.textBox2.Location = new System.Drawing.Point(223, 174);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(152, 30);
@@ -75,7 +75,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.textBox3.Location = new System.Drawing.Point(199, 227);
+            this.textBox3.Location = new System.Drawing.Point(223, 227);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(152, 30);
@@ -153,7 +153,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.label6.Location = new System.Drawing.Point(234, 35);
+            this.label6.Location = new System.Drawing.Point(268, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(236, 29);
             this.label6.TabIndex = 11;
@@ -164,7 +164,7 @@
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.button2.Location = new System.Drawing.Point(590, 300);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 33);
+            this.button2.Size = new System.Drawing.Size(152, 51);
             this.button2.TabIndex = 12;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;

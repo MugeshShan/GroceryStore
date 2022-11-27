@@ -23,5 +23,12 @@ namespace GroceryStoreApplication
             var time = Utils.Utility.Order.IsInstaBuy ? "30 mins" : "2 hours";
             label2.Text = "Your items will arrive in " + time;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Products cart = new Products();
+            cart.Show();
+            this.Close();
+        }
     }
 }

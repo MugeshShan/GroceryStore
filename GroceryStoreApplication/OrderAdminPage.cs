@@ -28,7 +28,7 @@ namespace GroceryStoreApplication
                 var str = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
                 connection.ConnectionString = ConfigurationManager.AppSettings["GroceryStoreDBConnectionString"];
                 connection.Open();
-                var command = String.Format("Select * from Order");
+                var command = String.Format("Select * from Sales");
                 OleDbCommand command2 = new OleDbCommand(command, connection);
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 adapter.SelectCommand = command2;

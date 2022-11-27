@@ -14,7 +14,7 @@ namespace GroceryStoreApplication.Models
 
         public double Price { get; set; }
 
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         public int UserId { get; set; }
 
