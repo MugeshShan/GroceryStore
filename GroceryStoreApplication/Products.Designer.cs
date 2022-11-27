@@ -43,6 +43,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Category";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // comboBox1
             // 
@@ -51,6 +52,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 28);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button1
             // 
@@ -61,6 +63,7 @@
             this.button1.Text = "Get";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // flowLayoutPanel1
             // 

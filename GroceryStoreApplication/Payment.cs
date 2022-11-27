@@ -47,7 +47,7 @@ namespace GroceryStoreApplication
             payment.IsConfirmed = true;
             payment.UserId = Utils.Utility.User.Id;
             var date = DateTime.Now.ToString("MM/dd/yyyy");
-            var paymentCommand = String.Format("INSERT INTO [Payment] (Id, [OrderId], BillAmount, [IsConfirmed] , UserId, [PaymentDate])  " +
+            var paymentCommand = String.Format("INSERT INTO [Payment] (Id, [OrderId], BillAmount, [IsConfirmed] , UserId, [PaymentDate], [Address])  " +
                 "VALUES ('{0}', '{1}', {2}, {3}, {4},  '{5}')", payment.Id, Utils.Utility.Order.Id, Utils.Utility.Order.BillAmount, "Yes", Utils.Utility.User.Id, date);
             OleDbCommand paymentCommand2 = new OleDbCommand(paymentCommand, connection);
             paymentCommand2.ExecuteNonQuery();

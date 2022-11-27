@@ -46,6 +46,7 @@
             this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Page";
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
             // 
             // label2
             // 
@@ -55,6 +56,7 @@
             this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Category Name";
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // label3
             // 
@@ -64,6 +66,7 @@
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "All Categories";
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // textBox1
             // 
@@ -71,6 +74,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 26);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button1
             // 
@@ -81,6 +85,7 @@
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button2
             // 
@@ -91,6 +96,7 @@
             this.button2.Text = "Get";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // dataGridView1
             // 

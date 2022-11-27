@@ -49,6 +49,7 @@
             this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Page";
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
             // 
             // label2
             // 
@@ -58,6 +59,7 @@
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Product Name";
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // label3
             // 
@@ -67,6 +69,7 @@
             this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Category";
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // label4
             // 
@@ -76,6 +79,7 @@
             this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Price";
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button1
             // 
@@ -86,6 +90,7 @@
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button2
             // 
@@ -95,6 +100,8 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Get";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // dataGridView1
             // 
@@ -112,6 +119,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 26);
             this.textBox1.TabIndex = 7;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // textBox2
             // 
@@ -119,6 +127,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(228, 26);
             this.textBox2.TabIndex = 8;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // comboBox1
             // 
@@ -127,6 +136,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 28);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // ProductAdminPage
             // 

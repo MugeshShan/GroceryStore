@@ -40,6 +40,7 @@
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
             // 
             // label2
             // 
@@ -49,6 +50,7 @@
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F);
             // 
             // ThankYou
             // 

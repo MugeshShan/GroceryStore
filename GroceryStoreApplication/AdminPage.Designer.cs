@@ -38,14 +38,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(338, 32);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.label3.Location = new System.Drawing.Point(316, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.Size = new System.Drawing.Size(141, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Admin Page";
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.button1.Location = new System.Drawing.Point(332, 115);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 39);
@@ -56,6 +58,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.button2.Location = new System.Drawing.Point(332, 196);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 39);
@@ -66,6 +69,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.button3.Location = new System.Drawing.Point(332, 271);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 38);
@@ -76,6 +80,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.button4.Location = new System.Drawing.Point(332, 340);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 38);

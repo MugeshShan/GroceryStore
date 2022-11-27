@@ -57,6 +57,7 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Your Cart !!!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13F);
             // 
             // radioButton1
             // 
@@ -70,6 +71,7 @@
             this.radioButton1.Text = "Normal Delivery";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // radioButton2
             // 
@@ -82,6 +84,7 @@
             this.radioButton2.Text = "Insta Buy";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // button1
             // 
@@ -92,6 +95,7 @@
             this.button1.Text = "Make Payment";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // label2
             // 
@@ -101,6 +105,7 @@
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Bill Amount: ";
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // label3
             // 
@@ -110,6 +115,7 @@
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "label3";
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10F);
             // 
             // Cart
             // 
